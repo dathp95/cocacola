@@ -71,6 +71,9 @@ header .nav-bar li a {
     font-weight: 600;
     color: #fff;
 }
+header .nav-bar li a:hover {
+    font-size: 1.1em;
+}
 section .content {
     position: relative;
     display: flex;
@@ -147,11 +150,11 @@ section .content {
 
 .content .imgBox {
     position: relative;
-    width: 600px;
+    width: 700px;
     display: flex;
-    justify-content: flex-end;
-    // background-color: rgb(68, 49, 231);
+    justify-content: flex-start;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .content .imgBox img {
     max-width: 150px;
@@ -185,4 +188,58 @@ section .content {
 .swiper-3d .swiper-slide-shadow-left,
 .swiper-3d .swiper-slide-shadow-right {
     background: none;
+}
+
+@media (max-width: 900px){
+    header .nav-bar {
+        display: none;
+    }
+    header .nav-bar.active {
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        background: $object-color-1;
+        width: 100%;
+        height: 100vh;        
+        z-index: 1;
+    }
+    header .nav-bar li a {
+        margin: 20px 0;
+        font-size: 1.1em;
+
+    }
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url("./images/menu.png") no-repeat center;
+        cursor: pointer;
+      
+
+        z-index: 2;
+    }
+    .toggle.active {
+        background: url("./images/close.png") no-repeat center;
+    }
+    section {
+       padding: 150px 40px;
+
+    }
+    header {
+        padding: 40px;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .social {
+        left: 40px;
+    }
+    .content .textBox {
+        max-width: 100%;
+    }
 }

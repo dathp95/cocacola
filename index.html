@@ -17,7 +17,8 @@
         </div>
         <header>
             <a href="#"><img class = "logo" src="./images/logo.png" alt="logo"></a>
-            <ul class="nav-bar">
+            <div class="toggle" onclick="toggleMenu()"></div>
+            <ul class="nav-bar" onclick="toggleMenu()">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Menu</a></li>
                 <li><a href="#">What's new</a></li>
@@ -71,12 +72,20 @@
             pagination: {
             el: ".swiper-pagination",
             },
-            // loop: true,
-            // autoplay: {
-            //     delay: 2500,
-            //     disableOnteraction: false,
-            // }
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnteraction: false,
+            }
         });
+
+        function toggleMenu() {
+            menuToggle = document.querySelector('.toggle')
+            nav_bar = document.querySelector('.nav-bar')
+
+            menuToggle.classList.toggle('active')
+            nav_bar.classList.toggle('active')
+        }
     </script>
 </body>
 <script src="./main.js"></script>
